@@ -46,7 +46,7 @@ class Schedule:
                 self.__all_games = statsapi.schedule(self.date.strftime("%Y-%m-%d"))
 #                client =  NHLClient(verbose=True)
 #                data = client.schedule.get_schedule(date="2021-01-13")
-                debug.log("Response: %s",self.__all_games)
+                debug.log("Response: %s",self.__all_games[0])
             except:
                 debug.exception("Networking error while refreshing schedule")
                 return UpdateStatus.FAIL
