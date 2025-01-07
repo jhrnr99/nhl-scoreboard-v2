@@ -61,7 +61,7 @@ def main(matrix, config_base):
     # MLB image disabled when using renderer, for now.
     # see: https://github.com/ty-porter/RGBMatrixEmulator/issues/9#issuecomment-922869679
 #    if os.path.exists(logo_path) and driver.is_hardware():
-    if os.path.exists(logo_path)
+    if os.path.exists(logo_path):
         logo = Image.open(logo_path)
         matrix.SetImage(logo.convert("RGB"))
         logo.close()
