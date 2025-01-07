@@ -2,7 +2,7 @@ import time
 from datetime import datetime, timedelta
 
 import statsapi
-import requests
+from nhlpy import NHLClient
 
 import data.teams
 import debug
@@ -44,8 +44,7 @@ class Schedule:
             self.starttime = time.time()
             try:
 #                self.__all_games = statsapi.schedule(self.date.strftime("%Y-%m-%d"))
-                data = requests.get("https://api-web.nhle.com/v1/schedule/now")
-                debug.log("Game is %s", data)
+                self.__all_games = NHLClient.schedule.get_schedule(date="2021-01-13")
             except:
                 debug.exception("Networking error while refreshing schedule")
                 return UpdateStatus.FAIL
