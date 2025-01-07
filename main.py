@@ -8,6 +8,7 @@ if sys.version_info <= (3, 5):
     sys.exit(1)
 
 import statsapi
+from nhlpy import NHLClient
 
 statsapi_version = tuple(map(int, statsapi.__version__.split(".")))
 if statsapi_version < (1, 5, 1):
