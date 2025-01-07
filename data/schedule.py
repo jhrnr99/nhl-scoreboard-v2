@@ -2,6 +2,7 @@ import time
 from datetime import datetime, timedelta
 
 import statsapi
+import requests
 
 import data.teams
 import debug
@@ -42,7 +43,8 @@ class Schedule:
             debug.log("Updating schedule for %s", self.date)
             self.starttime = time.time()
             try:
-                self.__all_games = statsapi.schedule(self.date.strftime("%Y-%m-%d"))
+#                self.__all_games = statsapi.schedule(self.date.strftime("%Y-%m-%d"))
+                self.__all_games = requests.get("https://api-web.nhle.com/v1/schedule/now")
             except:
                 debug.exception("Networking error while refreshing schedule")
                 return UpdateStatus.FAIL
