@@ -65,7 +65,7 @@ class Schedule:
                     self.current_idx %= len(games)
 
                 self._games = games
-                debug.log("Response: %s",self.__all_games[0])
+                debug.log("Response: %s",self.__all_games)
 
                 return UpdateStatus.SUCCESS
 
