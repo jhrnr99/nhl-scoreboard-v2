@@ -89,7 +89,8 @@ if [ "$SKIP_PYTHON" = false ]; then
         libsdl2-image-2.0-0 \
         libsdl2-2.0-0 \
         libsdl2-ttf-2.0-0 \
-        libopenjp2-7
+        libopenjp2-7 \
+        nhl-api-py
 fi
 
 echo
