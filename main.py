@@ -76,6 +76,7 @@ def main(matrix, config_base):
     render.start()
 
     screen = data.get_screen_type()
+    debug.log("Screen is: %s", screen)
     if screen == ScreenType.ALWAYS_NEWS:
         __refresh_news(render, data)
     elif screen == ScreenType.ALWAYS_STANDINGS:
