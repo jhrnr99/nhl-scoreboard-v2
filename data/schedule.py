@@ -15,7 +15,6 @@ GAMES_REFRESH_RATE = 6 * 60
 
 class Schedule:
     def __init__(self, config):
-        client =  NHLClient(verbose=True)
         self.config = config
         self.date = self.__parse_today()
         self.starttime = time.time()
@@ -45,6 +44,7 @@ class Schedule:
             self.starttime = time.time()
             try:
 #                self.__all_games = statsapi.schedule(self.date.strftime("%Y-%m-%d"))
+                client =  NHLClient(verbose=True)
                 self.__all_games = client.schedule.get_schedule(date="2021-01-13")
             except:
                 debug.exception("Networking error while refreshing schedule")
