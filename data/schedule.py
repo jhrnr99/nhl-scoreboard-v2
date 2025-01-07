@@ -44,7 +44,8 @@ class Schedule:
             self.starttime = time.time()
             try:
 #                self.__all_games = statsapi.schedule(self.date.strftime("%Y-%m-%d"))
-                self.__all_games = requests.get("https://api-web.nhle.com/v1/schedule/now")
+                data = requests.get("https://api-web.nhle.com/v1/schedule/now")
+                debug.log("Game is %s", data.gameWeek)
             except:
                 debug.exception("Networking error while refreshing schedule")
                 return UpdateStatus.FAIL
