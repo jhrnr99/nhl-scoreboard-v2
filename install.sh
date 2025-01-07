@@ -89,8 +89,7 @@ if [ "$SKIP_PYTHON" = false ]; then
         libsdl2-image-2.0-0 \
         libsdl2-2.0-0 \
         libsdl2-ttf-2.0-0 \
-        libopenjp2-7 \
-        nhl-api-py
+        libopenjp2-7
 fi
 
 echo
@@ -98,6 +97,11 @@ echo "------------------------------------"
 echo "  Installing dependencies..."
 echo "------------------------------------"
 echo
+
+echo "************************************"
+echo "      INSTALLING NHL API            "
+echo "************************************"
+sudo pip install nhl-api-py
 
 if [ "$SKIP_VENV" = false ]; then
     echo "Creating virtual environment..."
